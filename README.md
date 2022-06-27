@@ -1,18 +1,16 @@
-# webshop
-
-> A  vue & node  Project     PC端网上商城
+> A  vue & node / vue & spring boot  Project     网上订餐系统
 
 #### 架构
 
 - 前端：vue全家桶
-- 后端： node:express框架
-- 数据库：MySQL
+- 后端： node:express框架 / sring boot整合mybatis-plus
+- 数据库：MySQL、redis
 
-#### 基本功能
+#### 功能
 
 ##### 普通用户
 
-- 注册、登录（图形验证码）
+- 注册、登录（图形验证码，六位数字验证码）
 - 定位 （腾讯地图定位功能）、自主选择所在城市
 - 商品
   - 分类
@@ -30,25 +28,32 @@
   + 修改用户信息 （头像、昵称、简介...）
   + 修改手机号
   + 修改密码
+  + 查看订单信息
+  + 修改订单
 
-##### 管理员
+##### 后台管理员
 
 - 登录（固定账号密码：admin）
 - 查看所有用户
-- 查看数据库商品信息
-- 商品上架（添加商品）
-- 删除/修改商品
+- 查看数据库餐品信息
+- 餐品上架（添加餐品）
+- 删除/修改餐品
+- 查看评论信息
+- 删除评论
+- 查看用户信息
+- 修改用户信息
 - 分页功能
 
 
 
 #### 运行
 
-> 项目后端服务器是基于node、MySQL开发，运行前请确认系统已安装相关应用 
+> node项目后端服务器是基于node、MySQL开发，运行前请确认系统已安装相关应用 
+> spring boot项目后端整合了mybatis-plus和mybatis的，数据库除了MySQL之外还增加了一个redis缓存数据库
 
 - `git clone`
 
-##### 服务器端
+##### 后端
 
 + 确认是否全局安装`nodemon`
 
@@ -72,9 +77,9 @@
 + 将`web-server`文件夹下的`webshop.sql`导入`MySQL`数据库中
 + `npm install` 安装依赖
 + 修改`web-server/src/config.js`文件，此文件记录项目的全局变量，在文件中找到`password`、`database`、`user`属性，根据你的数据库信息修改它们的值
-+ `npm run dev` 在本地运行，启动服务器
++ `nodemon main.js` 在本地运行，启动服务器
 
-##### 客户端
+##### 前端
 
 - `cd web-client`
 - `mkdir static` 新建static文件夹，防止报错
