@@ -3,7 +3,7 @@
 #### 架构
 
 - 前端：vue全家桶
-- 后端： node:express框架 / sring boot整合mybatis-plus
+- 后端： node:express框架 / spring boot整合mybatis-plus
 - 数据库：MySQL、redis
 
 #### 功能
